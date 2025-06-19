@@ -27,26 +27,23 @@ export default async function Home() {
   const repositories: Repository[] = await response.json();
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[var(--background)]">
       <Header />
-      <main className="p-8">
-        <h1 className="text-4xl font-bold text-center mb-8">My Portfolio</h1>
-        
-        {/* Projects Section */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-6">My GitHub Projects</h2>
-          
-          {/* Responsive Grid Container */}
+      <main className="max-w-3xl mx-auto mt-10 p-6 bg-[var(--card-bg)] rounded-2xl flex flex-col items-center shadow-sm">
+        <section className="w-full mb-8">
+          <h2 className="text-2xl font-bold mb-4 text-[var(--foreground)]" style={{ fontFamily: 'Manrope, sans-serif' }}>
+            My GitHub Projects
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {repositories.map((repo) => (
               <ProjectCard
                 key={repo.name}
                 title={repo.name}
-                description={repo.description || 'No description available'}
+                description={repo.description || ''}
                 url={repo.html_url}
               />
             ))}
-        </div>
+          </div>
         </section>
       </main>
     </div>

@@ -1,57 +1,61 @@
 'use client';
 
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faUser, faFolderOpen, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 export default function Header() {
   return (
-    // Main header container with dark background, white text, and padding
-    <header className="bg-gray-800 text-white p-4">
-      {/* Container with max width and centered content */}
-      <div className="container mx-auto">
-        {/* Flex container to place name and nav side by side */}
-        <div className="flex justify-between items-center">
-          {/* Name heading with larger text and bold weight */}
-          <h2 className="text-2xl font-bold">Boris Georgiev</h2>
-          
-          {/* Navigation container */}
-          <nav>
-            {/* Unordered list with flex layout and gap between items */}
-            <ul className="flex space-x-6">
-              <li>
-                <Link 
-                  href="/" 
-                  className="hover:text-gray-300 transition-colors duration-200"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/about" 
-                  className="hover:text-gray-300 transition-colors duration-200"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/projects" 
-                  className="hover:text-gray-300 transition-colors duration-200"
-                >
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/contact" 
-                  className="hover:text-gray-300 transition-colors duration-200"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
+    <header className="sticky top-0 z-50 bg-[var(--card-bg)] text-[var(--foreground)] py-3 rounded-b-xl shadow-sm">
+      <div className="max-w-3xl mx-auto flex flex-col items-center">
+        <h2 className="text-2xl font-bold tracking-tight mb-1" style={{ fontFamily: 'Manrope, sans-serif' }}>
+          Boris Georgiev
+        </h2>
+        <nav>
+          <ul className="flex space-x-3 sm:space-x-8 justify-center items-center mt-1">
+            <li className='flex items-center'>
+              <FontAwesomeIcon icon={faHome}/>
+              <Link 
+                href="/"
+                className="text-[var(--foreground)] hover:text-[var(--accent)] transition-colors duration-150 px-2 pt-1 flex items-center gap-2"
+                style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 550 }}
+              >
+                
+                Home
+              </Link>
+            </li>
+            <li className='flex items-center'>
+              <FontAwesomeIcon icon={faUser} />
+              <Link 
+                href="/about"
+                className="text-[var(--foreground)] hover:text-[var(--accent)] transition-colors duration-150 px-2 pt-1 flex items-center gap-2"
+                style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 550 }}
+              >
+                About
+              </Link>
+            </li>
+            <li className='flex items-center'>
+              <FontAwesomeIcon icon={faFolderOpen} />
+              <Link 
+                href="/projects"
+                className="text-[var(--foreground)] hover:text-[var(--accent)] transition-colors duration-150 px-2 pt-1 flex items-center gap-2"
+                style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 550 }}
+              >
+                Projects
+              </Link>
+            </li>
+            <li className='flex items-center'>
+              <FontAwesomeIcon icon={faEnvelope} />
+              <Link 
+                href="/contact"
+                className="text-[var(--foreground)] hover:text-[var(--accent)] transition-colors duration-150 px-2 pt-1 flex items-center gap-2"
+                style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 550 }}
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );
