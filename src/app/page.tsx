@@ -11,12 +11,11 @@ type Repository = {
 export default async function Home() {
   // Fetch repositories from GitHub API
   const response = await fetch('https://api.github.com/users/Boril4o/repos', {
-    // Add cache: 'no-store' to disable caching
-    cache: 'no-store',
-    // Add headers to avoid rate limiting
     headers: {
       'Accept': 'application/vnd.github.v3+json',
+      'Authorization': `token ${process.env.GITHUB_TOKEN}`,
     },
+    cache: 'no-store',
   });
 
   // Handle potential errors
