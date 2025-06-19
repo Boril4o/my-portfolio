@@ -2,12 +2,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f6f6;         /* Very light gray background */
-  --foreground: #181818;         /* Dark gray for primary text */
-  --accent: #6b6b6b;             /* Medium gray for secondary text */
-  --card-bg: #ffffff;            /* Off-white for cards/inputs */
-  --project-card-bg: #F5F4F4;    /* Lighter gray for project cards only */
-  --input-bg: #f3f3f3;           /* Slightly gray for input fields */
+  --background: #f6f6f6;         /* Light mode: Very light gray background */
+  --foreground: #181818;         /* Light mode: Dark gray for primary text */
+  --accent: #6b6b6b;             /* Light mode: Medium gray for secondary text */
+  --card-bg: #ffffff;            /* Light mode: Off-white for cards/inputs */
+  --project-card-bg: #F5F4F4;    /* Light mode: Lighter gray for project cards only */
+  --input-bg: #f3f3f3;           /* Light mode: Slightly gray for input fields */
   --border-radius: 1rem;
   --font-sans: 'Manrope', Arial, Helvetica, sans-serif;
 }
@@ -21,10 +21,23 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Force light mode by overriding dark mode variables with light mode values */
+    --background: #f6f6f6 !important;
+    --foreground: #181818 !important;
+    --accent: #6b6b6b !important;
+    --card-bg: #ffffff !important;
+    --project-card-bg: #F5F4F4 !important;
+    --input-bg: #f3f3f3 !important;
+    --border-radius: 1rem !important;
+    --font-sans: 'Manrope', Arial, Helvetica, sans-serif !important;
   }
 }
+
+/*
+EXPLANATION:
+- The :root selector defines all color variables for light mode.
+- The @media (prefers-color-scheme: dark) block now forces these same light mode values using !important, so your site always appears in light mode, even if the device/browser is set to dark mode.
+*/
 
 body {
   background: var(--background);
