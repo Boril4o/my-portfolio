@@ -37,11 +37,11 @@ export default function Header() {
             <li className='flex items-center'>
               <FontAwesomeIcon icon={faFolderOpen} />
               <Link 
-                href="/projects"
+                href="/books"
                 className="text-[var(--foreground)] hover:text-[var(--accent)] transition-colors duration-150 px-2 pt-1 flex items-center gap-2"
                 style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 550 }}
               >
-                Projects
+                Books
               </Link>
             </li>
             <li className='flex items-center'>

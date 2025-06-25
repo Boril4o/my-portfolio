@@ -1,8 +1,7 @@
-import Header from './components/Header';
 import ProjectCard from './components/ProjectCard';
 
 // Define the type for GitHub repository data
-type Repository = {
+interface Repository {
   name: string;
   description: string | null;
   html_url: string;
@@ -27,7 +26,6 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-[var(--background)]">
-      <Header />
       <main className="max-w-3xl mx-auto mt-10 p-6 bg-[var(--card-bg)] rounded-2xl flex flex-col items-center shadow-sm">
         <section className="w-full mb-8">
           <h2 className="text-2xl font-bold mb-4 text-[var(--foreground)]" style={{ fontFamily: 'Manrope, sans-serif' }}>

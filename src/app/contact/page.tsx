@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Header from '../components/Header';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -29,7 +28,6 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-[var(--background)]">
-      <Header />
       <main className="max-w-md mx-auto mt-10 p-6 bg-[var(--card-bg)] rounded-2xl flex flex-col items-center shadow-sm">
         <h1 className="text-3xl font-bold text-center mb-6 text-[var(--foreground)]" style={{ fontFamily: 'Manrope, sans-serif' }}>
           Contact Me
